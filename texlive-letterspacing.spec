@@ -1,6 +1,6 @@
 Name:		texlive-letterspacing
 Version:	54266
-Release:	1
+Release:	2
 Summary:	Letter spacing
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/letterspacing
