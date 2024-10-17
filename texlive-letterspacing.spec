@@ -3,7 +3,7 @@ Version:	54266
 Release:	2
 Summary:	Letter spacing
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/letterspacing
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/letterspacing
 License:	knuth
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/letterspacing.r%{version}.tar.xz
 BuildArch:	noarch
