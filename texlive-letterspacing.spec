@@ -1,38 +1,22 @@
-Name:		texlive-letterspacing
-Version:	54266
-Release:	2
+%global tl_name letterspacing
+%global tl_revision 54266
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Letter spacing
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/letterspacing
+URL:		https://www.ctan.org/tex-archive/macros/generic/misc/letterspacing.tex
 License:	knuth
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/letterspacing.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/letterspacing.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Space out the letters of text; the command is
-\letterspace<\hbox modifier>{<text>}: the text is placed in an
-\hbox of the specified size, and space is inserted between each
-glyph to make the text fit the box. Note that letterspacing is
-not ordinarily considered acceptable in modern typesetting of
-English.
+Space out the letters of text; the command is \letterspace<\hbox
+modifier>{<text>}: the text is placed in an \hbox of the specified size,
+and space is inserted between each glyph to make the text fit the box.
+Note that letterspacing is not ordinarily considered acceptable in
+modern typesetting of English.
 
-%prep
-%autosetup -p1 -c
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/generic/letterspacing
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
